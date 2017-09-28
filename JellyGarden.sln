@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JellyGarden", "JellyGarden.csproj", "{80FCE6B3-67EC-139A-0C87-64B36921ECA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JellyGarden.Editor", "JellyGarden.Editor.csproj", "{DA4B0BF3-556D-B35A-41E6-4557D3ADEE90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80FCE6B3-67EC-139A-0C87-64B36921ECA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80FCE6B3-67EC-139A-0C87-64B36921ECA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80FCE6B3-67EC-139A-0C87-64B36921ECA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80FCE6B3-67EC-139A-0C87-64B36921ECA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA4B0BF3-556D-B35A-41E6-4557D3ADEE90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA4B0BF3-556D-B35A-41E6-4557D3ADEE90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA4B0BF3-556D-B35A-41E6-4557D3ADEE90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA4B0BF3-556D-B35A-41E6-4557D3ADEE90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

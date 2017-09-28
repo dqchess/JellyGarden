@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 11bbfd7feea7ec3438bed6a10ecec7a8
+timeCreated: 1505899410
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - emptyBlock: {fileID: 2800000, guid: f8037e2d044c3af4b82ee2cc57325685, type: 3}
+  - singleBlock: {fileID: 2800000, guid: 5696fba72c2ed154ba8f6211ae4539d9, type: 3}
+  - doubleBlock: {fileID: 2800000, guid: b19a43d9055f7834dbb0c212adbe27c8, type: 3}
+  - iceBlock: {fileID: 2800000, guid: 8abf30bb16cb0784e8b162f2a89cc586, type: 3}
+  - solidBlock: {fileID: 2800000, guid: 163f3c91a399e984aaa1b286f01f61e1, type: 3}
+  - undestroyBlock: {fileID: 2800000, guid: a294ebc1da4cfb4458dc32311aca6281, type: 3}
+  - growupBlock: {fileID: 2800000, guid: 04eb4f7f498326b4d87af3b9bc66bfee, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,39 @@
+Initialize engine version: 5.6.2f1 (a2913c821e27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon HD 7800 Series (ID=0x6819)
+    Vendor:   ATI
+    VRAM:     1004 MB
+    Driver:   22.19.165.1
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\UnityProject\JellyGarden\App_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\UnityProject\JellyGarden\App_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\UnityProject\JellyGarden\App_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\UnityProject\JellyGarden\App_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\DemiLib.dll (this message is harmless)
+Loading D:\UnityProject\JellyGarden\App_Data\Managed\DemiLib.dll into Unity Child Domain
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\DOTween.dll (this message is harmless)
+Loading D:\UnityProject\JellyGarden\App_Data\Managed\DOTween.dll into Unity Child Domain
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\DOTween43.dll (this message is harmless)
+Loading D:\UnityProject\JellyGarden\App_Data\Managed\DOTween43.dll into Unity Child Domain
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\DOTween46.dll (this message is harmless)
+Loading D:\UnityProject\JellyGarden\App_Data\Managed\DOTween46.dll into Unity Child Domain
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\DOTween50.dll (this message is harmless)
+Loading D:\UnityProject\JellyGarden\App_Data\Managed\DOTween50.dll into Unity Child Domain
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\DOTweenPro.dll (this message is harmless)
+Loading D:\UnityProject\JellyGarden\App_Data\Managed\DOTweenPro.dll into Unity Child Domain
+- Completed reload, in  0.035 seconds
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\UnityProject\JellyGarden\App_Data\Managed\System.dll (this message is harmless)
+desktop: 2560x1440 60Hz; virtual: 2560x1440 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.587137 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1a90 -> priority: 1 
