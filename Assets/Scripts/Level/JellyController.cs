@@ -13,20 +13,36 @@ public class JellyController : MonoBehaviour {
     public GameObject squarePrefab;
     public GameObject jellyPrefab;
 
+    //当前的关卡数据
+    LevelData levelData;
+
+    //当前关卡数据
+    List<List<Square>> gridData = new List<List<Square>>();
+
     void Awake()
     {
         instance = this;
 
         //获取关卡数据
         int levelNum = GameManager.instance.runningLevel;
-        LevelData levelData = ResManager.instance.GetLevelDataList().levelList[levelNum - 1];
+        levelData = ResManager.instance.GetLevelDataList().levelList[levelNum - 1];
 
         //设置背景图片
         background.sprite = levelData.background;
 
-        //生成square和block
+        //生成初始的square和block
+        GenerateSquareAndBlock();
+
+        //随机生成糖果
+        GenerateJelly();
+        
+    }
+
+    //生成初始的square和block
+    void GenerateSquareAndBlock()
+    {
         float startPosX = 0;
-        if (levelData.xCount%2==1)
+        if (levelData.xCount % 2 == 1)
         {
             startPosX = -(levelData.xCount / 2) * GameData.tileWidth;
         }
@@ -34,37 +50,43 @@ public class JellyController : MonoBehaviour {
         {
             startPosX = -(levelData.xCount / 2) * GameData.tileWidth + GameData.tileWidth / 2.0f;
         }
-        
-        float startPosY =0;
+
+        float startPosY = 0;
         if (levelData.yCount % 2 == 1)
         {
             startPosY = (levelData.yCount / 2) * GameData.tileHeight;
         }
         else
         {
-            startPosY = ((levelData.yCount / 2)-1) * GameData.tileHeight + GameData.tileHeight / 2.0f;
+            startPosY = ((levelData.yCount / 2) - 1) * GameData.tileHeight + GameData.tileHeight / 2.0f;
         }
-        for (int i=0;i<levelData.yCount;i++)
+        gridData.Clear();
+        for (int i = 0; i < levelData.yCount; i++)
         {
-            for (int j=0;j<levelData.xCount;j++)
+            List<Square> lineData = new List<Square>();
+            gridData.Add(lineData);
+            for (int j = 0; j < levelData.xCount; j++)
             {
                 //生成square
                 Vector3 pos = new Vector3(startPosX + j * GameData.tileWidth, startPosY - i * GameData.tileHeight, 0);
                 GameObject square = GameObject.Instantiate<GameObject>(squarePrefab);
-                square.transform.SetParent(GridRoot);               
+                square.transform.SetParent(GridRoot);
                 square.transform.localPosition = pos;
-                
+
                 GameObject block = square.transform.GetChild(0).gameObject;
                 //block 和 square的脚本
                 Square squareScript = square.GetComponent<Square>();
                 Block blockScript = block.GetComponent<Block>();
+
+                //加入数据链表
+                lineData.Add(squareScript);
 
                 //设置图片和状态
                 squareScript.aboveBlock = blockScript;
                 squareScript.xPos = j;
                 squareScript.yPos = i;
 
-                blockScript.belongToSquare = squareScript;                
+                blockScript.belongToSquare = squareScript;
                 blockScript.xPos = j;
                 blockScript.yPos = i;
                 blockScript.SetBlockType(levelData.block[i * GameData.maxCol + j]);
@@ -78,7 +100,45 @@ public class JellyController : MonoBehaviour {
                 //{
                 //    square.GetComponent<SpriteRenderer>().sprite = ResManager.instance.squareBgRes[(i+1)%2];
                 //}
-                squareScript.spriteRnderer.sprite = ResManager.instance.squareBgRes[(i + j % 2) % 2];                              
+                squareScript.spriteRnderer.sprite = ResManager.instance.squareBgRes[(i + j % 2) % 2];
+            }
+        }
+    }
+
+    void GenerateJelly()
+    {
+        for (int i=0; i< levelData.yCount;i++)
+        {
+            for (int j=0;j<levelData.xCount;j++)
+            {
+                switch (gridData[i][j].aboveBlock.blockType)
+                {     
+                    //可以生成糖果的block                                      
+                    case BlockType.EMPTY:                     
+                    case BlockType.SINGLEBLOCK:                       
+                    case BlockType.DOUBLEBLOCK:                       
+                    case BlockType.ICEBLOCK:
+                        {
+                            GameObject jelly = Instantiate<GameObject>(jellyPrefab);
+                            Item jellyScript= jelly.GetComponent<Item>();
+                            gridData[i][j].aboveBlock.itemAbove = jellyScript;
+                            //
+                            jellyScript.RandomJelly(levelData.jellyKindCount);
+                            jelly.transform.SetParent(JellyRoot);
+                            jelly.transform.position = new Vector3(gridData[i][j].aboveBlock.transform.position.x, gridData[i][j].aboveBlock.transform.position.y, GameData.jellyZOrderPos);
+
+
+                        }
+                        break;
+                    //不能生成糖果的block
+                    case BlockType.NONE:
+                    case BlockType.SOLIDBLOCK:                       
+                    case BlockType.UNDESTROYBLOCK:                       
+                    case BlockType.GROWUPBLOCK:               
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }

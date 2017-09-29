@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JellyGarden_Git", "JellyGarden_Git.csproj", "{A34646BF-3D33-FF5D-2724-BAF432939221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JellyGarden_Git.Editor", "JellyGarden_Git.Editor.csproj", "{5DD79049-C53F-14BE-CC66-C5244FE598C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A34646BF-3D33-FF5D-2724-BAF432939221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34646BF-3D33-FF5D-2724-BAF432939221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34646BF-3D33-FF5D-2724-BAF432939221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34646BF-3D33-FF5D-2724-BAF432939221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DD79049-C53F-14BE-CC66-C5244FE598C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DD79049-C53F-14BE-CC66-C5244FE598C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DD79049-C53F-14BE-CC66-C5244FE598C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DD79049-C53F-14BE-CC66-C5244FE598C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

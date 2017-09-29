@@ -55,6 +55,7 @@ public class Item : MonoBehaviour {
     public JellyColor jellyColor;   
     public IngredientType ingredientType;
 
+    public SpriteRenderer spriteRenderer;
 
     // Use this for initialization
     void Start () {
@@ -65,4 +66,12 @@ public class Item : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void RandomJelly(int typeLimit)
+    {
+        jellyType = JellyType.NORMAL;
+        jellyColor = (JellyColor)Random.Range(0, typeLimit - 1);
+        spriteRenderer.sprite = ResManager.instance.jellyRes[(int)jellyType].jellyColorRes[(int)jellyColor];
+
+    }
 }
