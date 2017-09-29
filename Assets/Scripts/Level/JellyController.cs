@@ -103,6 +103,63 @@ public class JellyController : MonoBehaviour {
                 squareScript.spriteRnderer.sprite = ResManager.instance.squareBgRes[(i + j % 2) % 2];
             }
         }
+
+        //判断edge是否显示
+        for (int i = 0; i < levelData.yCount; i++)
+        {
+            for (int j = 0; j < levelData.xCount; j++)
+            {
+                if (gridData[i][j].aboveBlock.blockType == BlockType.NONE)
+                {
+                    continue;
+                }
+                //上
+                //如果是最上边的格子，并且block不是NONE
+                if (i==0)
+                {
+                    gridData[i][j].edges[0].SetActive(true);
+                }
+                //如果不是最上边的格子，就要判断它的上一排是否是NONE
+                else if (i!=0&& gridData[i-1][j].aboveBlock.blockType == BlockType.NONE)
+                {
+                    gridData[i][j].edges[0].SetActive(true);
+                }
+
+                //下
+                //如果是最下边的格子，并且block不是NONE
+                if (i == levelData.yCount-1)
+                {
+                    gridData[i][j].edges[1].SetActive(true);
+                }
+                //如果不是最下边的格子，就要判断它的下一排是否是NONE
+                else if (i != (levelData.yCount - 1) && gridData[i + 1][j].aboveBlock.blockType == BlockType.NONE)
+                {
+                    gridData[i][j].edges[1].SetActive(true);
+                }
+
+                //左
+                if (j == 0)
+                {
+                    gridData[i][j].edges[2].SetActive(true);
+                }
+                //如果不是最上边的格子，就要判断它的上一排是否是NONE
+                else if (j != 0 && gridData[i][j-1].aboveBlock.blockType == BlockType.NONE)
+                {
+                    gridData[i][j].edges[2].SetActive(true);
+                }
+
+                //右
+                if (j == levelData.xCount-1)
+                {
+                    gridData[i][j].edges[3].SetActive(true);
+                }
+                //如果不是最上边的格子，就要判断它的上一排是否是NONE
+                else if (j != levelData.xCount - 1 && gridData[i][j + 1].aboveBlock.blockType == BlockType.NONE)
+                {
+                    gridData[i][j].edges[3].SetActive(true);
+                }
+            }
+        }
     }
 
     void GenerateJelly()

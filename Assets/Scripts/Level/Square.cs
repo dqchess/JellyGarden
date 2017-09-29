@@ -14,6 +14,8 @@ public class Square : MonoBehaviour {
     public int yPos;//y位置（数组位置）
     public Block aboveBlock;//这块Square上方的block
 
+    public GameObject[] edges;
+
 	// Use this for initialization
 	void Start () {
 		
