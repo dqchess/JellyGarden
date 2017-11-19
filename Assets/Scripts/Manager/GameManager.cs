@@ -7,12 +7,12 @@ public class GameManager : MonoBehaviour {
     static public GameManager instance;
 
     //Managers
-    public UIManager uiManager;
-    public ResManager resManager;
-    public PlayerDataOperator playerDataOperator;
+    public UIManager uiManager;//UI管理
+    public ResManager resManager;//资源管理
+    public PlayerDataOperator playerDataOperator;//玩家数据操作(读取和保存)
 
     //
-    public int runningLevel;
+    public int runningLevel;//正在运行的level
 
     void Awake()
     {
